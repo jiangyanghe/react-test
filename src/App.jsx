@@ -19,7 +19,7 @@ function App() {
         </button> */}
 
        {/* /* ************* ClassComponents *********** */}
-        {/* <ClassComponents /> */}
+        <ClassComponents />
     </>
   )
 }
