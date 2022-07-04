@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
+// import _ from "lodash"
+
 import logo from './logo.svg'
 import './App.css'
 
@@ -8,11 +10,15 @@ import './App.css'
 // import MemoDemo from './memoDemo';
 import Home from './lazy/home'
 import List from './lazy/list'
+import ErrorBoundariesDemo from './errorBoundaries'
 
-const About = React.lazy(() => import('./lazy/about'))
+const About = React.lazy(() => import('./lazy/about'));
+// const { keyBy } = import('loadsh')
 
 function App() {
   let [intervalFlag, setIntervalFlag] = useState(true);
+
+  // console.log(111, keyBy)
 
   return (
     <>
@@ -45,6 +51,7 @@ function App() {
          </Routes>
        </BrowserRouter>
 
+      <ErrorBoundariesDemo />
     </>
   )
 }

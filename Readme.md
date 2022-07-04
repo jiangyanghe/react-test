@@ -591,94 +591,25 @@ export default class App extends Component {
 }
 ```
 
-### 15. 依赖优化
+```
+ 45 modules transformed.
+dist/assets/favicon.17e50649.svg   1.49 KiB
+dist/assets/logo.ecc203fb.svg      2.61 KiB
+dist/index.html                    0.46 KiB
+dist/assets/about.8df6b5aa.js      0.61 KiB / gzip: 0.33 KiB
+dist/assets/a.3580703f.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/b.35a9c00a.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/index.62f502b0.css     0.75 KiB / gzip: 0.48 KiB
+dist/assets/index.d658dc80.js      152.32 KiB / gzip: 49.70 KiB
 
-在应用程序中经常会依赖第三方包, 但我们不想引用包中的所有代码, 我们只想用到哪些代码就包含哪些代码. 此时可以使用插件对依赖项进行优化. [优化资源](https://github.com/GoogleChromeLabs/webpack-libs-optimizations)
 
-当前我们就使用 lodash 举例子. 应用基于 create-react-app 脚手架创建。
-
-1. 下载依赖 `yarn add react-app-rewired customize-cra lodash babel-plugin-lodash`
-
-   1. react-app-rewired: 覆盖 create-react-app 的默认配置
-
-      ```javascript
-      module.exports = function (oldConfig) {
-        return newConfig
-      }
-      // 参数中的 oldConfig 就是默认的 webpack config
-      ```
-
-   2. customize-cra: 导出了一些辅助方法, 可以让以上写法更加简洁
-
-      ```javascript
-      const { override, useBabelRc } = require("customize-cra")
-      
-      module.exports = override(
-        (oldConfig) => newConfig,
-        (oldConfig) => newConfig
-      )
-      ```
-
-      override：可以接收多个参数, 每个参数都是一个配置函数, 函数接收 oldConfig, 返回 newConfig
-
-      useBabelRc: 允许使用 .babelrc 文件进行 babel配置
-
-   3. babel-plugin-lodash: 对应用中的 lodash 进行精简
-
-2. 在项目的根目录下新建 `config-overrides.js` 并加入配置代码
-
-   ```javascript
-   const { override, useBabelRc } = require("customize-cra")
-   
-   module.exports = override(useBabelRc())
-   ```
-
-3. 修改 `package.json` 文件中的构建命令
-
-   ```javascript
-   "scripts": {
-     "start": "react-app-rewired start",
-     "build": "react-app-rewired build",
-     "test": "react-app-rewired test --env=jsdom",
-     "eject": "react-scripts eject"
-   }
-   ```
-
-4. 创建 `.babelrc` 文件并加入配置
-
-   ```javascript
-   {
-     "plugins": ["lodash"]
-   }
-   ```
-
-5. 生产环境下的三种 JS 文件
-
-   1. main.[hash].chunk.js: 这是你的应用程序代码, App.js 等.
-
-   2. 1.[hash].chunk.js: 这是第三方库的代码, 包含你在 node_modules 中导入的模块
-
-   3. runtime~main.[hash].js webpack运行时代码
-
-         <img src="./images/5-1-未加入lodash时的初始包大小.png" align="left" width="50%"/>
-
-         <img src="./images/5-2-加入lodash后的包大小.png" align="left" width="50%"/>
-
-         <img src="./images/5-3-优化lodash后的包大小.png" align="left" width="50%"/>
-
-6. App 组件
-
-   ```react
-   import React from "react"
-   import _ from "lodash"
-   
-   function App() {
-     console.log(_.chunk(["a", "b", "c", "d"], 2))
-     return <div>App works</div>
-   }
-   
-   export default App
-   ```
-
-![联系方式](https://s.zceme.cn/fed/cover-h.jpg)
+dist/assets/favicon.17e50649.svg   1.49 KiB
+dist/assets/logo.ecc203fb.svg      2.61 KiB
+dist/index.html                    0.46 KiB
+dist/assets/about.2b82ddc3.js      0.61 KiB / gzip: 0.33 KiB
+dist/assets/a.9a3f2aad.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/b.66c7caf9.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/index.62f502b0.css     0.75 KiB / gzip: 0.48 KiB
+dist/assets/index.46575fff.js      224.66 KiB / gzip: 75.90 KiB
+````
 
