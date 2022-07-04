@@ -1,9 +1,15 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import logo from './logo.svg'
 import './App.css'
 
 // import TestInterval from './testInterval';
-import ClassComponents from './classComponents';
+// import ClassComponents from './classComponents';
+// import MemoDemo from './memoDemo';
+import Home from './lazy/home'
+import List from './lazy/list'
+
+const About = React.lazy(() => import('./lazy/about'))
 
 function App() {
   let [intervalFlag, setIntervalFlag] = useState(true);
@@ -19,7 +25,26 @@ function App() {
         </button> */}
 
        {/* /* ************* ClassComponents *********** */}
-        <ClassComponents />
+        {/* <ClassComponents /> */}
+
+        {/* <MemoDemo /> */}
+
+
+        <BrowserRouter>
+         <Link to="/">Home</Link><br />
+         <Link to="/list">List</Link><br />
+         <Link to="/about">about</Link>
+         <Routes>
+             <Route path="/" element={<Home />} exact /> 
+             <Route path="/list" element={<List />} />
+             <Route path="/about" element={
+              <React.Suspense fallback={<div>loading...</div>}>
+                <About />
+              </React.Suspense>
+             } />
+         </Routes>
+       </BrowserRouter>
+
     </>
   )
 }
