@@ -591,6 +591,32 @@ export default class App extends Component {
 }
 ```
 
+### 15. [React 团队提出了 useEvent 的 RFC](https://github.com/facebook/react/issues/14099)
+
+
+```
+function Chat() {
+  const [text, setText] = useState('');
+
+  // 🟡 A different function whenever `text` changes
+  const onClick = useCallback(() => {
+    sendMessage(text);
+  }, [text]);
+
+  return <SendButton onClick={onClick} />;
+}
+
+function Chat() {
+  const [text, setText] = useState('');
+
+  const onClick = useEvent(() => {
+    sendMessage(text);
+  });
+
+  return <SendButton onClick={onClick} />;
+}
+```
+
 ```
  45 modules transformed.
 dist/assets/favicon.17e50649.svg   1.49 KiB
