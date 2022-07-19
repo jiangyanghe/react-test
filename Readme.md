@@ -618,24 +618,49 @@ function Chat() {
 ```
 
 ```
- 45 modules transformed.
+✓ 45 modules transformed.
 dist/assets/favicon.17e50649.svg   1.49 KiB
 dist/assets/logo.ecc203fb.svg      2.61 KiB
 dist/index.html                    0.46 KiB
-dist/assets/about.8df6b5aa.js      0.61 KiB / gzip: 0.33 KiB
-dist/assets/a.3580703f.js          0.11 KiB / gzip: 0.13 KiB
-dist/assets/b.35a9c00a.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/a.cbad14c7.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/about.d24bb292.js      0.61 KiB / gzip: 0.33 KiB
+dist/assets/b.ed293252.js          0.11 KiB / gzip: 0.13 KiB
 dist/assets/index.62f502b0.css     0.75 KiB / gzip: 0.48 KiB
-dist/assets/index.d658dc80.js      152.32 KiB / gzip: 49.70 KiB
+dist/assets/index.1aaaeba4.js      152.16 KiB / gzip: 49.64 KiB
 
-
+// 直接加载lodash
+✓ 47 modules transformed.
 dist/assets/favicon.17e50649.svg   1.49 KiB
 dist/assets/logo.ecc203fb.svg      2.61 KiB
 dist/index.html                    0.46 KiB
-dist/assets/about.2b82ddc3.js      0.61 KiB / gzip: 0.33 KiB
-dist/assets/a.9a3f2aad.js          0.11 KiB / gzip: 0.13 KiB
-dist/assets/b.66c7caf9.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/about.c97126dc.js      0.61 KiB / gzip: 0.33 KiB
+dist/assets/a.3e18090f.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/b.70fbe1b6.js          0.11 KiB / gzip: 0.13 KiB
 dist/assets/index.62f502b0.css     0.75 KiB / gzip: 0.48 KiB
-dist/assets/index.46575fff.js      224.66 KiB / gzip: 75.90 KiB
+dist/assets/index.cd3a5d54.js      224.49 KiB / gzip: 75.83 KiB
+
+// vite-plugin-imp 优化按需加载（禁止使用import _ from 'lodash';）
+✓ 46 modules transformed.
+dist/assets/favicon.17e50649.svg   1.49 KiB
+dist/assets/logo.ecc203fb.svg      2.61 KiB
+dist/index.html                    0.46 KiB
+dist/assets/about.9cb1688b.js      0.61 KiB / gzip: 0.33 KiB
+dist/assets/a.f5d740f6.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/b.5be7b0a0.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/index.62f502b0.css     0.75 KiB / gzip: 0.48 KiB
+dist/assets/index.671cd1d8.js      152.26 KiB / gzip: 49.69 KiB
+
+// 加入andt-mobile
+✓ 160 modules transformed.
+dist/assets/favicon.17e50649.svg   1.49 KiB
+dist/assets/logo.ecc203fb.svg      2.61 KiB
+dist/index.html                    0.46 KiB
+dist/assets/about.a4f3d458.js      0.61 KiB / gzip: 0.33 KiB
+dist/assets/a.80a78628.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/b.2ba89a92.js          0.11 KiB / gzip: 0.13 KiB
+dist/assets/index.87d7b158.css     3.60 KiB / gzip: 1.17 KiB
+dist/assets/index.938fbfa1.js      162.72 KiB / gzip: 53.99 KiB
+
+
 ````
 
