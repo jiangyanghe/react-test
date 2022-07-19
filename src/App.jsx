@@ -8,8 +8,8 @@ import './App.css'
 // import TestInterval from './testInterval';
 // import ClassComponents from './classComponents';
 // import MemoDemo from './memoDemo';
-// import Home from './lazy/home'
-// import List from './lazy/list'
+import Home from './lazy/home'
+import List from './lazy/list'
 // import ErrorBoundariesDemo from './errorBoundaries'
 import EventDemo from './useEventDemo';
 
@@ -37,7 +37,7 @@ function App() {
         {/* <MemoDemo /> */}
 
 
-        {/* <BrowserRouter>
+        <BrowserRouter>
          <Link to="/">Home</Link><br />
          <Link to="/list">List</Link><br />
          <Link to="/about">about</Link>
@@ -50,7 +50,7 @@ function App() {
               </React.Suspense>
              } />
          </Routes>
-       </BrowserRouter> */}
+       </BrowserRouter>
 
       {/* <ErrorBoundariesDemo /> */}
 
