@@ -16,15 +16,11 @@ export default defineConfig({
           libName: 'lodash',
           libDirectory: '',
           camel2DashComponentName: false
-        },
-        {
-          libName: 'antd-mobile',
-          // style(name) {
-          //   // use less
-          //   return `antd/es/${name}/style/index.js`
-          // }
-        },
+        }
       ]
     })
-  ]
+  ],
+  build: {
+    minify: false
+  }
 })
