@@ -13,6 +13,8 @@ import List from './lazy/list'
 // import ErrorBoundariesDemo from './errorBoundaries'
 import EventDemo from './useEventDemo';
 
+import ContextDemo from './useContextDemo';
+
 const About = React.lazy(() => import('./lazy/about'));
 // const { keyBy } = import('loadsh')
 
@@ -37,7 +39,7 @@ function App() {
         {/* <MemoDemo /> */}
 
 
-        <BrowserRouter>
+        {/* <BrowserRouter>
          <Link to="/">Home</Link><br />
          <Link to="/list">List</Link><br />
          <Link to="/about">about</Link>
@@ -50,11 +52,14 @@ function App() {
               </React.Suspense>
              } />
          </Routes>
-       </BrowserRouter>
+       </BrowserRouter> */}
 
       {/* <ErrorBoundariesDemo /> */}
 
-      <EventDemo />
+      {/* <EventDemo /> */}
+
+      {/* **** useContext *** */}
+      <ContextDemo />
     </>
   )
 }
